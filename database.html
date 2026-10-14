@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>資料庫｜AI跨來源知識整合學習系統</title><link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="database">
+  <main class="app-shell">
+    <header class="topbar"><a class="icon-link" href="database.html" aria-label="前往資料庫"><span class="menu-glyph"></span></a><h1>AI跨來源知識整合學習系統</h1><a class="icon-link" href="index.html" aria-label="回到學習首頁"><span class="home-glyph"></span></a></header>
+    <section class="page-intro"><p class="eyebrow">Learning archive</p><h2>歷史學習紀錄</h2><p>查看原始材料、學習對話、觀點摘要與跨來源整合結果。</p></section>
+    <section class="card"><div><h2>我的紀錄</h2><span id="record-count" class="muted"></span></div><div class="grid-2" style="margin:16px 0"><input id="record-search" type="search" placeholder="搜尋標題、材料或觀點"><select id="record-filter" aria-label="篩選狀態"><option value="all">全部狀態</option><option value="completed">已完成整合</option><option value="saved">觀點已保存</option><option value="incomplete">尚未完成整合</option><option value="progress">進行中</option></select></div><div id="record-list" class="record-list"></div></section>
+    <footer class="footer">紀錄儲存在瀏覽器 localStorage；清除瀏覽器資料會一併刪除。</footer>
+  </main><script src="app.js"></script>
+</body>
+</html>

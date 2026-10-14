@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1 上傳材料｜AI跨來源知識整合學習系統</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="upload">
+  <main class="app-shell">
+    <!-- 頁首：左側連到資料庫，右側回到學習首頁。 -->
+    <header class="topbar">
+      <a class="icon-link" href="database.html" aria-label="前往資料庫">
+        <span class="menu-glyph"></span>
+      </a>
+      <h1>AI跨來源知識整合學習系統</h1>
+      <a class="icon-link" href="index.html" aria-label="回到學習首頁">
+        <span class="home-glyph"></span>
+      </a>
+    </header>
+
+    <!-- 裝飾用的間距，讓步驟導覽與頁首分開。 -->
+    <div class="workflow-top-gap" aria-hidden="true"></div>
+
+    <!-- 四個學習步驟的頁面導覽。 -->
+    <nav class="step-nav" aria-label="學習步驟">
+      <a class="step-link" data-step="1" href="index.html">1 上傳材料</a>
+      <a class="step-link" data-step="2" href="dialogue.html">2 對話思考</a>
+      <a class="step-link" data-step="3" href="viewpoint.html">3 整理觀點</a>
+      <a class="step-link" data-step="4" href="knowledge-links.html">4 連結知識</a>
+    </nav>
+
+    <!-- 顯示今天日期與目前時間；app.js 會填入內容。 -->
+    <div class="date-strip">
+      <span id="today"></span>
+      <span>時間：<b id="now-time"></b></span>
+    </div>
+
+    <!-- 首頁介紹文字。 -->
+    <section class="page-intro">
+      <p class="eyebrow">Learning workspace</p>
+      <h2>今天想記錄哪些知識呢？</h2>
+      <p>貼上材料或選擇 PDF，再透過引導對話整理自己的理解。</p>
+    </section>
+
+    <!-- 尚未開始學習時顯示：輸入標題、選擇 PDF、貼上文字。 -->
+    <section id="upload-form" class="card">
+      <h2>建立學習紀錄</h2>
+      <div class="stack">
+        <div>
+          <label for="learning-title">學習標題</label>
+          <input id="learning-title" type="text" maxlength="80" placeholder="例如：生成式 AI 與自主學習" autocomplete="off">
+        </div>
+        <div>
+          <label for="learning-file">檔案上傳（限 PDF）</label>
+          <div class="file-drop">
+            <span id="file-name">尚未選擇檔案</span>
+            <input id="learning-file" type="file" accept="application/pdf">
+          </div>
+        </div>
+        <div class="text-upload-field">
+          <label for="learning-text">文字上傳</label>
+          <textarea id="learning-text" placeholder="貼上文章摘要、課堂筆記或你想理解的內容……"></textarea>
+        </div>
+        <button id="start-learning" class="btn btn-primary btn-block" type="button">與系統對話</button>
+      </div>
+    </section>
+
+    <!-- 開始學習後顯示：材料會鎖定，並提供建立新紀錄或回到對話的入口。 -->
+    <section id="locked-material" class="card hidden">
+      <p class="eyebrow">已鎖定的學習材料</p>
+      <h2 id="locked-title"></h2>
+      <p id="locked-file" class="muted"></p>
+      <div id="locked-text" class="soft-card viewpoint"></div>
+      <div class="status-note" style="margin-top:14px">開始學習後材料不可編輯，但可以隨時回到此頁查看。</div>
+      <div class="grid-2" style="margin-top:14px">
+        <button id="new-learning" class="btn" type="button">開始新的學習</button>
+        <a class="btn btn-primary" href="dialogue.html">回到對話思考</a>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
