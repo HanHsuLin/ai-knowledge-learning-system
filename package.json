@@ -1,0 +1,28 @@
+{
+  "name": "ai-knowledge-learning-system",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "AI 跨來源知識整合學習系統後端",
+  "scripts": {
+    "dev": "node --watch server/src/index.js",
+    "start": "node server/src/index.js",
+    "db:migrate": "node server/src/db/migrate.js",
+    "check": "node --check server/src/index.js && node --check server/src/app.js && node --check server/src/routes/records.js && node --check server/src/routes/materials.js && node --check server/src/routes/messages.js && node --check server/src/routes/viewpoints.js && node --check server/src/routes/viewpoint-revisions.js && node --check server/src/routes/integrations.js && node --check server/src/routes/knowledge-links.js && node --check server/src/services/gemini.js && node --check server/src/services/pdf.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@google/genai": "^2.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.0.0",
+    "helmet": "^8.1.0",
+    "multer": "^2.4.0",
+    "pdf-parse": "^2.4.5",
+    "pg": "^8.16.0",
+    "zod": "^4.0.0"
+  }
+}
